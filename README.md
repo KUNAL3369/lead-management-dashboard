@@ -1,4 +1,3 @@
---
 
 # Lead Management Dashboard
 
@@ -188,7 +187,7 @@ Password: admin123
 
 ## Deployed URLs
 
-- Frontend: `<add frontend URL>`
-- Backend: `<add backend URL>`
+- Frontend: https://lead-management-dashboard-rosy.vercel.app/
+- Backend: https://lead-management-backend-2y20.onrender.com/api/leads
 
 ---
