@@ -164,18 +164,7 @@ Frontend runs on:
 http://localhost:5173
 ```
 
----
 
-## Demo Login
-
-```
-Username: admin
-Password: admin123
-```
-
-(Authentication is intentionally basic and used only for demonstration.)
-
----
 
 ## Deployment
 
