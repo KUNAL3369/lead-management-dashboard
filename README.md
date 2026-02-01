@@ -1,182 +1,172 @@
+# Lead Management Dashboard (Admin Tool)
 
-# Lead Management Dashboard
+A production-style **internal dashboard application** built to manage, filter, and review lead data at scale.
+This project focuses on **frontend architecture, API-driven UI design, and real-world data handling**, similar to internal tools used by sales, operations, and platform teams.
 
-This project is a simple full-stack Lead Management Dashboard built as part of a take-home assignment.
-It demonstrates frontend–backend integration, server-side data handling, and a clean, responsive UI.
+The goal of this project was not just to display data, but to **design a usable, scalable dashboard interface** backed by real APIs and persistent storage.
 
 ---
 
-## Project Overview
+## Key Highlights
 
-The application allows users to view and manage leads stored in a MongoDB database.
-Leads can be searched, filtered by status, paginated, and viewed in detail.
-
-The focus of this project is:
-
-- API design
-- Database integration
-- Frontend consumption of server-side data
+- Built as an **internal admin tool**, not a consumer-facing UI
+- Frontend-first design with **server-driven pagination and filtering**
+- Handles realistic data volumes instead of mock JSON
+- Clean separation between UI, API logic, and data storage
+- Designed with maintainability and clarity in mind
 
 ---
 
 ## Features
 
-- Dashboard listing leads in a table
-- Server-side search by name
-- Filter leads by status (new, contacted, converted, lost)
-- Pagination
-- Lead details page
-- Basic login screen (demo purpose only)
-- Responsive layout (works in light and dark mode)
+### Lead Listing Dashboard
+- Paginated table view with real API-backed data
+- Server-side pagination for performance and scalability
+
+### Search & Filtering
+- Filter leads by status
+- Search leads by name or email
+
+### Lead Detail View
+- View complete lead information
+- Update lead status
+
+### Persistent Data
+- Data stored in MongoDB
+- Seeded dataset for realistic testing
+
+### Responsive UI
+- Optimized for desktop and laptop screens
+- Clean, readable layout for internal users
 
 ---
 
 ## Tech Stack
 
 ### Frontend
-
 - React
-- Vite
-- JavaScript
-- Axios
-- React Router
-- CSS
+- JavaScript (ES6+)
+- CSS (Flexbox & layout-focused styling)
 
 ### Backend
-
 - Node.js
-- Express.js
-- MongoDB Atlas
-- Mongoose
+- Express
+- MongoDB (Mongoose)
 
----
-
-## Project Structure (Frontend)
-
-```
-src/
-├── api/
-│   └── api.js
-├── components/
-│   └── Pagination.jsx
-├── pages/
-│   ├── Dashboard.jsx
-│   ├── LeadDetails.jsx
-│   └── Login.jsx
-├── App.jsx
-├── main.jsx
-└── index.css
-```
-
----
-
-## API Endpoints Used
-
-### Get all leads
-
-```
-GET /api/leads
-```
-
-Query parameters:
-
-- `search`
-- `status`
-- `page`
-- `limit`
-
-Example:
-
-```
-/api/leads?search=john&status=converted&page=1&limit=10
-```
-
----
-
-### Get lead by ID
-
-```
-GET /api/leads/:id
-```
-
----
-
-## Database Seeding
-
-Dummy data is generated using Faker.
-
-- Total records: **300 leads**
-
-Run once before starting the backend:
-
-```bash
-node seed.js
-```
-
----
-
-## Environment Variables
-
-### Backend (`Backend/.env`)
-
-```
-MONGO_URI=your_mongodb_connection_string
-```
-
-### Frontend (`Frontend/.env`)
-
-```
-VITE_API_BASE_URL=http://localhost:5000
-```
-
----
-
-## Local Setup
-
-### Backend
-
-```bash
-cd Backend
-npm install
-node seed.js
-node server.js
-```
-
-Backend runs on:
-
-```
-http://localhost:5000
-```
-
----
-
-### Frontend
-
-```bash
-cd Frontend
-npm install
-npm run dev
-```
-
-Frontend runs on:
-
-```
-http://localhost:5173
-```
-
-
-
-## Deployment
-
+### Deployment
 - Frontend: Vercel
 - Backend: Render
-- Database: MongoDB Atlas (free tier)
 
 ---
 
-## Deployed URLs
+## Architecture Overview
 
-- Frontend: https://lead-management-dashboard-rosy.vercel.app/
-- Backend: https://lead-management-backend-2y20.onrender.com/api/leads
+```
+Frontend (React)
+   ↓ REST APIs
+Backend (Node + Express)
+   ↓
+MongoDB
+```
+
+- The frontend consumes **paginated and filtered API responses**
+- Business logic and data access are handled on the server
+- The UI remains focused on rendering, interaction, and state management
+
+---
+
+## Project Structure
+
+```
+frontend/
+├── components/
+│   ├── LeadTable.jsx
+│   ├── LeadDetails.jsx
+│   └── Filters.jsx
+├── pages/
+│   └── Dashboard.jsx
+├── services/
+│   └── api.js
+└── App.jsx
+
+backend/
+├── models/
+│   └── Lead.js
+├── routes/
+│   └── leads.js
+├── controllers/
+│   └── leadController.js
+└── server.js
+```
+
+---
+
+## Implementation Notes
+
+### Pagination & Filtering
+
+Pagination and filtering are implemented **server-side** to reflect real production behavior.
+The frontend requests only the data required for the current page and filter state, keeping the UI responsive even as data size grows.
+
+### Frontend Focus
+
+While a backend is included, the primary learning objective was:
+
+- Consuming real APIs
+- Designing dashboard UIs
+- Managing async data states
+- Building interfaces used by internal teams
+
+### Data Modeling
+
+Leads are stored with realistic fields such as name, email, source, and status, allowing meaningful filtering and updates.
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/lead-management-dashboard.git
+cd lead-management-dashboard
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start backend
+
+```bash
+npm run server
+```
+
+### 4. Start frontend
+
+```bash
+npm start
+```
+
+---
+
+## Why This Project Matters
+
+This project demonstrates how frontend dashboards interact with real backend systems and operational data. It reflects practical experience with internal/admin tooling, including scalability concerns such as pagination, filtering, and API-driven UI updates.
+
+**The same patterns used here are directly applicable to:**
+
+- Internal company dashboards
+- Admin and operations panels
+- CRM-style interfaces
+- Platform and tooling dashboards
+
+---
+
+## Summary
+
+This project highlights my ability to build API-driven frontend interfaces that go beyond static UI demos, focusing on real data flow, system constraints, and usability considerations found in professional engineering environments.
 
 ---
