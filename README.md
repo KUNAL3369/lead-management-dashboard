@@ -162,8 +162,7 @@ npm start
 
 ## 📬 Let's Connect
 
-🟢 **Open to:** Frontend Engineer · Product Engineer · Internal Tools Developer · Startup Software Engineer · AI Application Developer *(entry-level & early-stage startups)*
-
+🟢 **Open to:** Frontend Engineer · Product Engineer · Internal Tools Developer · Startup Software Engineer · AI Application Developer 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Kunal%20Prabhakar-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/prabhakarkunal)
 [![Email](https://img.shields.io/badge/Email-kunal.prabhakar3082@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kunal.prabhakar3082@gmail.com)
 
