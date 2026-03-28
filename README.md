@@ -1,81 +1,102 @@
-# Lead Management Dashboard (Admin Tool)
+<div align="center">
 
-A production-style **internal dashboard application** built to manage, filter, and review lead data at scale.
-This project focuses on **frontend architecture, API-driven UI design, and real-world data handling**, similar to internal tools used by sales, operations, and platform teams.
+# 🗂️ Lead Management Dashboard
 
-The goal of this project was not just to display data, but to **design a usable, scalable dashboard interface** backed by real APIs and persistent storage.
+**A production-style internal admin tool to manage, filter, and review lead data at scale.**
+
+Built to reflect how real sales, operations, and platform teams interact with internal CRM tooling.
+
+[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://lead-management-dashboard-rosy.vercel.app/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
+[![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![Vercel](https://img.shields.io/badge/Frontend-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Render](https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge)](https://render.com/)
+
+</div>
 
 ---
 
-## Key Highlights
+## ⚡ Try It Right Now
 
-- Built as an **internal admin tool**, not a consumer-facing UI
-- Frontend-first design with **server-driven pagination and filtering**
-- Handles realistic data volumes instead of mock JSON
+No setup. No sign-up. Just open and explore.
+
+| | |
+|---|---|
+| 🌐 **Live URL** | https://lead-management-dashboard-rosy.vercel.app/ |
+
+---
+
+## 🧠 The Problem It Solves
+
+Internal teams managing leads — sales, ops, and support — need fast, filterable views into their data. Spreadsheets break at scale. Consumer UIs aren't built for operational workflows.
+
+This dashboard gives internal users:
+
+- 📋 A paginated, filterable view of all lead records
+- 🔍 Real-time search by name or email
+- 🔄 Status updates directly from the dashboard
+- 📦 Server-side data handling that scales beyond mock JSON
+
+---
+
+## 🔥 Key Highlights
+
+- Server-side pagination and filtering — not fake client-side slicing
+- Full-stack architecture: React frontend consuming a real Node + Express API
+- Seeded MongoDB dataset for realistic data volume testing
 - Clean separation between UI, API logic, and data storage
-- Designed with maintainability and clarity in mind
 
 ---
 
-## Features
+## ✨ Features
 
-### Lead Listing Dashboard
-- Paginated table view with real API-backed data
-- Server-side pagination for performance and scalability
-
-### Search & Filtering
-- Filter leads by status
-- Search leads by name or email
-
-### Lead Detail View
-- View complete lead information
-- Update lead status
-
-### Persistent Data
-- Data stored in MongoDB
-- Seeded dataset for realistic testing
-
-### Responsive UI
-- Optimized for desktop and laptop screens
-- Clean, readable layout for internal users
+| Feature | Description |
+|---|---|
+| 📊 **Lead Listing Dashboard** | Paginated table view backed by real API data |
+| 🔍 **Search & Filter** | Filter by status, search by name or email |
+| 👤 **Lead Detail View** | View full lead info and update status inline |
+| 💾 **Persistent Storage** | MongoDB with seeded dataset for realistic testing |
+| ⚡ **Server-Side Pagination** | Only fetches data needed per page — scales cleanly |
+| 🖥️ **Internal UI** | Optimized for desktop — built for operational users, not consumers |
 
 ---
 
-## Tech Stack
-
-### Frontend
-- React
-- JavaScript (ES6+)
-- CSS (Flexbox & layout-focused styling)
-
-### Backend
-- Node.js
-- Express
-- MongoDB (Mongoose)
-
-### Deployment
-- Frontend: Vercel
-- Backend: Render
-
----
-
-## Architecture Overview
+## 🏗️ How It Works
 
 ```
-Frontend (React)
-   ↓ REST APIs
-Backend (Node + Express)
-   ↓
-MongoDB
+React Frontend
+      │
+      ▼
+REST API requests (paginated + filtered)
+      │
+      ▼
+Node.js + Express (business logic + data access)
+      │
+      ▼
+MongoDB (Mongoose)
+      │
+      ▼
+Only the required page + filter slice returned to UI
 ```
 
-- The frontend consumes **paginated and filtered API responses**
-- Business logic and data access are handled on the server
-- The UI remains focused on rendering, interaction, and state management
+The frontend stays focused on rendering, interaction, and state management. All data logic lives on the server.
 
 ---
 
-## Project Structure
+## 🧰 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React, JavaScript (ES6+), CSS Flexbox |
+| Backend | Node.js, Express |
+| Database | MongoDB (Mongoose) |
+| Deployment | Vercel (frontend) + Render (backend) |
+
+---
+
+## 📁 Project Structure
 
 ```
 frontend/
@@ -101,72 +122,55 @@ backend/
 
 ---
 
-## Implementation Notes
-
-### Pagination & Filtering
-
-Pagination and filtering are implemented **server-side** to reflect real production behavior.
-The frontend requests only the data required for the current page and filter state, keeping the UI responsive even as data size grows.
-
-### Frontend Focus
-
-While a backend is included, the primary learning objective was:
-
-- Consuming real APIs
-- Designing dashboard UIs
-- Managing async data states
-- Building interfaces used by internal teams
-
-### Data Modeling
-
-Leads are stored with realistic fields such as name, email, source, and status, allowing meaningful filtering and updates.
-
----
-
-## Setup Instructions
-
-### 1. Clone the repository
+## 🚀 Run Locally
 
 ```bash
-git clone https://github.com/your-username/lead-management-dashboard.git
+git clone https://github.com/KUNAL3369/lead-management-dashboard.git
 cd lead-management-dashboard
-```
-
-### 2. Install dependencies
-
-```bash
 npm install
 ```
 
-### 3. Start backend
-
+Start backend:
 ```bash
 npm run server
 ```
 
-### 4. Start frontend
-
+Start frontend:
 ```bash
 npm start
 ```
 
 ---
 
-## Why This Project Matters
+## 🎯 Why This Project Matters
 
-This project demonstrates how frontend dashboards interact with real backend systems and operational data. It reflects practical experience with internal/admin tooling, including scalability concerns such as pagination, filtering, and API-driven UI updates.
-
-**The same patterns used here are directly applicable to:**
-
-- Internal company dashboards
-- Admin and operations panels
-- CRM-style interfaces
-- Platform and tooling dashboards
+- Demonstrates full-stack thinking — not just a UI consuming mock data
+- Server-side pagination and filtering reflect real production constraints
+- Patterns directly applicable to internal dashboards, CRM tools, admin panels, and ops tooling
+- Shows ability to design for internal users — where usability and data clarity matter more than aesthetics
 
 ---
 
-## Summary
+## 🔮 Planned Improvements
 
-This project highlights my ability to build API-driven frontend interfaces that go beyond static UI demos, focusing on real data flow, system constraints, and usability considerations found in professional engineering environments.
+- [ ] Role-based access (Admin / Viewer)
+- [ ] Export leads as CSV
+- [ ] Lead creation form
+- [ ] Activity log per lead
 
 ---
+
+## 📬 Let's Connect
+
+🟢 **Open to:** Frontend Engineer · Product Engineer · Internal Tools Developer · Startup Software Engineer · AI Application Developer *(entry-level & early-stage startups)*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Kunal%20Prabhakar-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/prabhakarkunal)
+[![Email](https://img.shields.io/badge/Email-kunal.prabhakar3082@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kunal.prabhakar3082@gmail.com)
+
+---
+
+<div align="center">
+
+⭐ **Found this useful? Star the repo — it helps others discover it.**
+
+</div>
